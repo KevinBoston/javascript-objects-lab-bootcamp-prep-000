@@ -1,16 +1,20 @@
 var recipies = {}
 
 updateObjectWithKeyAndValue(object, key, value){
-  
+  return Object.assign({}, object, { [key]: value })
 }
 destructivelyUpdateObjectWithKeyAndValue(object, key, value){
-  
+  object.key = value;
+  return object;
 }
 deleteFromObjectByKey(object, key){
-  
+  var newObject = Object.assign({}, object);
+  delete newObject.key;
+  return newObject;
 }
 destructivelyDeleteFromObjectByKey(object, key){
-  
+  delete object.key;
+  return object;
 }
 
 //Objects
